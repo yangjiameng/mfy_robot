@@ -1,0 +1,10 @@
+<launch>
+
+  <node name="robot_bringup" pkg="serial_demo" type="serial_demo" output="screen" >
+   <param name="/serial_port" type="string" value="/dev/ttyS0"/>
+   <param name="/baudrate" type="int" value="115200" />
+  </node>
+
+  <node name="imu_to_base" pkg="tf" type="static_transform_publisher" args="0.0 0 0.2 0 0 0 base_link imu_link 20" />
+
+</launch>
